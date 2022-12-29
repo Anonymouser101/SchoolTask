@@ -1,0 +1,72 @@
+2. Duplicate Customers
+
+Krispy Kreme is giving away one free donut for each customer today. They suspect that some customers are trying to get more than their fair share of donuts by lining up more than once. Try to find these greedy customers so that Krispy Kreme can give away the sweet, soft and glazed donuts to the rightful owners. 
+
+
+
+Inputs
+
+1. The number of customers
+
+The value is > 0.
+
+2. The customers
+
+The value is within the range: 0 <= customer number <= 500.
+
+
+Sample Output
+
+Enter the number of customers: 4
+Customer number: 5
+Customer number: 6
+Customer number: 6
+Customer number: 5
+
+Duplicates: 
+Customer #5
+Customer #6
+
+
+Program: 
+
+#include <stdio.h>
+
+int main()
+{
+    int length, x=0;
+
+    printf("Enter the number of customers: ");
+    scanf("%d", &length);
+
+    int arr[20];
+
+    for(int i=0;i<length;++i)
+    {
+        printf("Customer number: ");
+        scanf("%d", &arr[i]);
+    }
+
+    for(int i=0;i<length;++i)
+    {
+        for(int j=i+1;j<length;++j)
+        {
+            if(arr[i]==arr[j] && x!=1)
+            {
+                printf("\nDuplicates:");
+                x=1;
+            }
+            if(arr[i]==arr[j] && arr[i]!=-1)
+            {
+                printf("\nCustomer #%d", arr[i]);
+                arr[i]=-1;
+                arr[j]=-1;
+            }
+        }
+    }
+
+    if(x==0)
+    {
+        printf("\nHONEST CUSTOMERS");
+    }
+}

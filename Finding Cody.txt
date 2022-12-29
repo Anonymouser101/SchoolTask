@@ -1,0 +1,58 @@
+4. Finding Cody
+
+Have you seen Cody?
+
+Well, he’s not actually lost, you see, but I just wanted to make a program that would let me find "Cody" among the given letters of a user in case he really does go missing.
+
+So, care to help me with it?
+
+
+
+Inputs
+
+1. The four characters
+
+
+
+Sample Output
+
+Enter the first character: o
+Enter the second character: C
+Enter the third character: d
+Enter the fourth character: Y
+I found you!
+
+
+Program:
+
+#include <stdio.h>
+int main()
+{
+    char letter[4];
+    int c=0, o=0, d=0, y=0; 
+
+    printf("Enter the first character: ");
+    scanf(" %c", &letter[0]);
+    printf("Enter the second character: ");
+    scanf(" %c", &letter[1]);
+    printf("Enter the third character: ");
+    scanf(" %c", &letter[2]);
+    printf("Enter the fourth character: ");
+    scanf(" %c", &letter[3]); 
+
+    for(int i=0; i<4; i++){
+        if(letter[i] == 'c' || letter[i] == 'C')
+            c=1;
+        if(letter[i] == 'o' || letter[i] == 'O')
+            o=1;
+        if(letter[i] == 'd' || letter[i] == 'D')
+            d=1;
+        if(letter[i] == 'y' || letter[i] == 'Y')
+            y=1;
+    }
+    if(c==1 && o==1 && d==1 && y==1){
+            printf("I found you!");
+    }else{
+        printf("Cody is missing");
+    }
+}

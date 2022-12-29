@@ -1,0 +1,62 @@
+1. Cody at World Cup
+
+Tomorrow is the closing ceremony for the 2022 World Cup, and Cody and his friends want to know who the top scorer of the tournament is. John and the others insist that it Lionel Messi who is the top-scorer (scoring 10) but Cody, a Ronaldo fan, is stubborn and decided to make a list of all the players who scored goals and order them randomly. He then must look for the highest number and see if that number is higher than Messi’s goals.
+
+Input the number of players then input the number of goals scored for each. Print "Not Messi" if the highest goals exceed 10 and "Okay, fine, it's Messi" if it doesn’t.
+
+
+
+Inputs
+
+1. Number of players
+
+2. Goals scored by each player
+
+All of these goals are whole numbers.
+
+
+Sample Output
+
+Enter the number of players: 4
+Goals score by player #1: 7
+Goals score by player #2: 2
+Goals score by player #3: 5
+Goals score by player #4: 1
+Okay, fine, it's Messi
+
+
+Program: 
+
+#include <stdio.h>
+int main()
+{
+    int scores[10];
+    int players, x, messi;
+
+    x=1;
+    messi=10;
+
+    printf("Enter the number of players: ");
+    scanf("%d", &players);
+
+    for(int i=0;i<players;i++)
+    {
+        printf("Goals score by player #%d: ", x);
+        scanf("%d", &scores[i]);
+        x++;
+    }
+
+    for(int n=0;n<players;n++)
+    {
+        if(scores[n]<messi)
+        {
+            printf("Okay, fine, it's Messi");
+            break;
+        }
+        else
+        {
+            printf("Not Messi");
+            break;
+        }
+    }
+}
